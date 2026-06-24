@@ -3,10 +3,10 @@
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   App.init();
+  // Firebase يبدأ بعد تحميل الصفحة (module script)
+  // Sync.init() يُستدعى من firebase.js تلقائياً
 });
 
-// Re-render on resize for confetti canvas accuracy is handled per-call.
-// Persist on tab close as a safety net.
 window.addEventListener("beforeunload", () => {
   try { Store.save(true); } catch (e) {}
 });
